@@ -1,5 +1,6 @@
+// tailwind.config.js - ES Module formatı
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
     content: [
       "./index.html",
       "./src/**/*.{js,ts,jsx,tsx}",
@@ -33,6 +34,12 @@ module.exports = {
             900: '#4c1d95',
             950: '#2e1065',
           },
+        },
+        fontFamily: {
+          sans: ['Inter', 'sans-serif'],
+        },
+        boxShadow: {
+          'card': '0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04)',
         },
       },
     },
