@@ -1,0 +1,42 @@
+{
+    "name": "pingmyweb",
+    "version": "1.0.0",
+    "description": "Web sitelerinin yeni ve güncellenmiş içeriklerinin arama motorlarına ve sosyal medya platformlarına hızlı bir şekilde bildirilmesini sağlayan URL ping sistemi",
+    "main": "server/app.js",
+    "scripts": {
+      "start": "node server/app.js",
+      "dev": "nodemon server/app.js",
+      "test": "jest"
+    },
+    "keywords": [
+      "ping",
+      "url",
+      "indexing",
+      "seo",
+      "search-engines"
+    ],
+    "author": "Ramazan",
+    "license": "ISC",
+    "dependencies": {
+      "axios": "^1.6.3",
+      "bcryptjs": "^2.4.3",
+      "bull": "^4.12.0",
+      "cors": "^2.8.5",
+      "dotenv": "^16.3.1",
+      "express": "^4.18.2",
+      "express-rate-limit": "^7.1.5",
+      "express-validator": "^7.0.1",
+      "helmet": "^7.1.0",
+      "ioredis": "^5.3.2",
+      "jsonwebtoken": "^9.0.2",
+      "pg": "^8.11.3",
+      "redis": "^4.6.12",
+      "winston": "^3.11.0",
+      "xmlrpc": "^1.3.2"
+    },
+    "devDependencies": {
+      "jest": "^29.7.0",
+      "nodemon": "^3.0.2",
+      "supertest": "^6.3.3"
+    }
+  }
