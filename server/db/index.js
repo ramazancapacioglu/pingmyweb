@@ -1,5 +1,6 @@
 const { Pool } = require('pg');
 const dotenv = require('dotenv');
+const path = require('path');
 
 // Çevre değişkenlerini yükle
 dotenv.config();
@@ -26,7 +27,10 @@ pool.connect((err, client, release) => {
 // Yardımcı sorgu fonksiyonu
 const query = (text, params) => pool.query(text, params);
 
+// Veritabanı şema modülünü ve başlatma modülünü dışa aktar
 module.exports = {
     query,
-    pool
+    pool,
+    // initDatabase fonksiyonunu burada direkt dışa aktarmıyoruz
+    // Bunun yerine app.js içinde init modülünü import edeceğiz
 };

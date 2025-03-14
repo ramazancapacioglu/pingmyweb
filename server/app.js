@@ -1,4 +1,6 @@
 const express = require('express');
+const { initDatabase } = require('./db/init');
+const db = require('./db');
 const cors = require('cors');
 const helmet = require('helmet');
 const dotenv = require('dotenv');
@@ -77,11 +79,24 @@ app.use((err, req, res, next) => {
     });
 });
 
-// Sunucuyu başlat
-app.listen(PORT, () => {
-    logger.info(`PingMyWeb.net sunucusu ${PORT} portunda çalışıyor.`);
-    logger.info(`Ortam: ${process.env.NODE_ENV}`);
-});
+// Uygulamayı başlatma fonksiyonu
+const startApp = async () => {
+    try {
+        // Veritabanını başlat
+        await initDatabase();
+
+        // Sunucuyu başlat
+        const PORT = process.env.PORT || 3000;
+        app.listen(PORT, () => {
+            console.log(`Sunucu başarıyla başlatıldı: http://localhost:${PORT}`);
+        });
+    } catch (error) {
+        console.error('Uygulama başlatma hatası:', error);
+        process.exit(1);
+    }
+};
+// Uygulamayı başlat
+startApp();
 
 // Graceful shutdown
 process.on('SIGTERM', () => {
