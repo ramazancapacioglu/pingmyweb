@@ -171,4 +171,24 @@ const Navbar = () => {
             ) : (
               <>
                 <button 
-                  onClick={
+                  onClick={handleLoginClick}
+                  className="w-full btn-outline py-2"
+                >
+                  Giriş
+                </button>
+                <button 
+                  onClick={handleRegisterClick}
+                  className="w-full btn-primary py-2"
+                >
+                  Kayıt Ol
+                </button>
+              </>
+            )}
+          </div>
+        </div>
+      </div>
+    </nav>
+  )
+}
+
+export default Navbar

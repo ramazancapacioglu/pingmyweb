@@ -36,4 +36,10 @@ export const listApiKeysService = async () => {
  */
 export const deleteApiKeyService = async (keyId) => {
   try {
-    const response = await api
+    const response = await api.delete(`/user/api-keys/${keyId}`)
+    
+    return response.data
+  } catch (error) {
+    throw error
+  }
+}
